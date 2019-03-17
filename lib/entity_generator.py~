@@ -1,0 +1,9 @@
+import uiid
+import entity
+
+class EntityGenerator:
+    def generate_entity(atts):
+        return Entity(atts, uuid.uiid4())
+
+
+        

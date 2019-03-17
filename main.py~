@@ -1,0 +1,28 @@
+from py_mini_racer import py_mini_racer "javascript embedding"
+import entity_generator
+
+ctx = py_mini_racer.MiniRacer()
+
+def eval_file(fname):           
+    f = file(fname)
+    lines = f.readlines()       
+    [ctx.eval(l.rstrip("\r\n")) for l in lines]
+    f.close()
+    return lines
+
+
+def main():
+    entity_list = []
+
+    cmd = raw_input(">")
+    if cmd == "r":
+        eval_file("code/test_script.js")
+    if cmd == "g":
+        enEntityGenerator.generate_entity({"x": 2})
+        
+    else:
+        print(ctx.call("fun2") + "\n")
+if __name__ == "__main__":
+    main()
+
+
